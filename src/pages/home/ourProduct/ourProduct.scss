@@ -1,0 +1,127 @@
+@import "../../../style/index.scss";
+
+.our_Product {
+  padding: 30px;
+
+  .our_Product_aligment {
+    @include flex;
+    gap: 6px;
+    align-items: center;
+
+    .our_Product_box {
+      width: 20px;
+      height: 40px;
+      border-radius: 3px;
+      background-color: var(--theme-box-color);
+    }
+
+    h2 {
+      @include font-18;
+      font-weight: 600;
+      color: var(--theme-font-color-red);
+    }
+  }
+
+  .our_productsTex {
+    padding-top: 10px;
+
+    h1 {
+      @include font-45;
+      font-weight: 600;
+
+      @media (max-width: 992px) {
+        @include font-35;
+        font-weight: 600;
+      }
+      @media (max-width: 576px) {
+        @include font-25;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .our_product_main {
+    @include grid-4;
+
+    @media (max-width: 992px) {
+      @include grid-2;
+    }
+
+    @media (max-width: 576px) {
+      @include grid-1;
+    }
+
+    .our_product_box {
+      max-width: 100%;
+      margin-top: 20px;
+
+      .our_product_image {
+        padding: 20px;
+        text-align: center;
+        background-color: var(--theme-searchbar-bg-color);
+
+        img {
+          width: 100px;
+          height: 150px;
+          object-fit: contain;
+        }
+
+        .our_product_cart_button {
+          margin-top: 20px;
+
+          button {
+            padding: 5px 20px;
+            border-radius: 20px;
+            background-color: var(--theme-button-color);
+            color: var(--theme-font-color);
+            border: none;
+            transition: 0.5s ease-in-out all;
+
+            &:hover {
+              background-color: var(--theme-button-black-color);
+              color: var(--theme-font-color);
+              transition: 0.5s ease-in-out all;
+            }
+
+            @media (max-width: 992px) {
+              padding: 10px 20px;
+            }
+          }
+        }
+      }
+
+      .our_product_containe {
+        padding: 10px;
+
+        p {
+          @include font-18;
+          font-weight: 500;
+        }
+
+        .our_product_item {
+          @include flex;
+          gap: 10px;
+          align-items: center;
+
+          span {
+            display: block;
+            @include font-16;
+            font-weight: 600;
+            color: var(--theme-font-color-red);
+          }
+
+          .star_icon {
+            font-size: 20px;
+            padding-bottom: 7px;
+            color: var(--theme-star-icon-color);
+          }
+
+          p {
+            @include font-18;
+            color: var(--theme-font-color-grey);
+          }
+        }
+      }
+    }
+  }
+}

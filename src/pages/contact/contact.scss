@@ -1,0 +1,64 @@
+@import "../../style/index.scss";
+
+.contact_main {
+  padding: 30px;
+  @include grid-2;
+
+  @media (max-width: 576px) {
+    @include grid-1;
+  }
+
+  .contact_us {
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .contact_aligment {
+      @include flex;
+      align-items: center;
+      padding-top: 20px;
+
+      .contact_icon {
+        width: 50px;
+        height: 50px;
+        background-color: var(--theme-box-color);
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+          color: var(--theme-font-color);
+          font-size: 25px;
+        }
+      }
+
+      .contact_text {
+        span {
+          display: block;
+          @include font-18;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .text {
+      padding-bottom: 30px;
+      border-bottom: 2px solid var(--theme-border-color);
+
+      p {
+        padding-top: 20px;
+        @include font-18;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  .contact_form {
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}

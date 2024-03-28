@@ -1,0 +1,12 @@
+.red-background {
+  background-color: red;
+}
+.icons {
+  img {
+    width: 30px;
+    cursor: pointer;
+  }
+  @media (max-width: 576px) {
+    display: none;
+  }
+}

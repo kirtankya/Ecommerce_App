@@ -1,0 +1,20 @@
+@import "../../../style/index.scss";
+
+.footer {
+  .footer_main {
+    background-color: var(--theme-banner-background-color);
+
+    input {
+      border-radius: 7px;
+      width: 200px;
+      height: 40px;
+      background-color: var(--theme-button-color-transparent);
+      color: var(--theme-font-color);
+      outline: none;
+      border: 1px solid var(--theme-font-color);
+    }
+    p {
+      margin-top: 10px;
+    }
+  }
+}

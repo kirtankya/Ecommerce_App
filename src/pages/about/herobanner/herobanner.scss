@@ -1,0 +1,127 @@
+@import "../../../style/index.scss";
+
+.herobanner_Main {
+  padding: 40px;
+  @media (max-width: 992px) {
+    padding: 20px;
+  }
+
+  .herobanner_aligment {
+    @include flex-between;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      @include flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .herobanner_section {
+      h1 {
+        @include font-45;
+        font-weight: 600;
+
+        @media (max-width: 992px) {
+          @include font-35;
+          font-weight: 500;
+        }
+      }
+
+      p {
+        padding-top: 20px;
+        @include font-16;
+        max-width: 500px;
+
+        @media (max-width: 992px) {
+          @include font-14;
+          max-width: 600px;
+          padding-top: 10px;
+        }
+
+        @media (max-width: 576px) {
+          max-width: 100%;
+        }
+      }
+
+      span {
+        padding-top: 10px;
+        @include font-16;
+        display: block;
+        max-width: 500px;
+
+        @media (max-width: 992px) {
+          @include font-14;
+          max-width: 600px;
+        }
+
+        @media (max-width: 576px) {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .herobanner_image {
+      img {
+        height: 500px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .herobanner_box_aligment {
+    margin-top: 20px;
+    @include grid-4;
+
+    @media (max-width: 992px) {
+      @include grid-2;
+    }
+
+    @media (max-width: 576px) {
+      @include grid-1;
+    }
+
+    .herobaner_box {
+      padding: 20px;
+      border: 1px solid var(--theme-border-color);
+      border-radius: 5px;
+      transition: 0.5s ease-in-out all;
+
+      .herobanner_circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: var(--theme-banner-background-color);
+        border: 10px solid var(--theme-border-color);
+        margin: 0 auto;
+
+        .icon {
+          font-size: 45px;
+          color: var(--theme-font-color);
+          padding-left: 16px;
+        }
+      }
+
+      .herobanner_text {
+        h1 {
+          @include font-35;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        p {
+          @include font-18;
+          text-align: center;
+        }
+      }
+      &:hover {
+        background-color: var(--theme-box-color);
+        color: var(--theme-font-color);
+        transition: 0.5s ease-in-out all;
+      }
+    }
+  }
+}

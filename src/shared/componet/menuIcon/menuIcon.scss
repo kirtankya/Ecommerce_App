@@ -1,0 +1,16 @@
+@import "../../../style/index.scss";
+.menu_icons {
+  display: none;
+  cursor: pointer;
+  @media (max-width: 576px) {
+    display: block;
+  }
+}
+.menu-item {
+  a {
+    display: block;
+    @include font-25;
+    color: var(--theme-header-font-color);
+    text-decoration: none;
+  }
+}

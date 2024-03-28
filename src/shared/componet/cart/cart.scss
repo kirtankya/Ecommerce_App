@@ -1,0 +1,10 @@
+@import "../../../style/index.scss";
+
+.cart_main {
+  margin: 20px;
+  .main_cart{
+    h2{
+      @include font-25;
+    }
+  }
+}

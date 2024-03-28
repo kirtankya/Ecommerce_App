@@ -1,0 +1,48 @@
+@import "./button/button";
+
+@import "./container/container";
+
+@import "./font/font";
+
+@import "./mixin/mixin";
+
+@import "./theme/theme";
+
+@import "./typography/typography";
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+@import "react-toastify/dist/ReactToastify.css";
+
+@import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin: 0px;
+}
+
+// body {
+//   ::-webkit-scrollbar {
+//     width: 10px;
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     background-color: var(--theme-font-color-grey);
+//     border-radius: 6px;
+
+//     &:hover {
+//       background-color: var(--theme-banner-background-color);
+//     }
+//   }
+// }
