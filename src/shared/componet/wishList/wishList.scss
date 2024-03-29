@@ -5,6 +5,11 @@
   img {
     width: 30px;
     cursor: pointer;
+
+    .red-icon {
+      filter: invert(43%) sepia(93%) saturate(5998%) hue-rotate(354deg)
+        brightness(108%) contrast(100%);
+    }
   }
   @media (max-width: 576px) {
     display: none;

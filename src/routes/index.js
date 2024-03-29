@@ -8,6 +8,8 @@ import About from "../pages/about";
 import ProductItems from "../pages/home/productItems";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Cart from "../shared/componet/cart";
+import { Provider } from "react-redux";
+import store from "../redux/store";
 
 
 function RouterComponent() {
@@ -38,7 +40,7 @@ function RouterComponent() {
 
 
     return (
-        <>
+        <Provider store={store}>
             <Router>
                 <Routes>
                     <Route path="/" element={<DefaultLayout loginData={loginData} onLogout={handleLogout} />}>
@@ -59,7 +61,7 @@ function RouterComponent() {
                     </Route>
                 </Routes>
             </Router>
-        </>
+        </Provider>
     );
 }
 

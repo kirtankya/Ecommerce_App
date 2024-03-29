@@ -1,3 +1,4 @@
+// ProductItems.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './productItems.scss';
@@ -6,9 +7,10 @@ import { IoMdStar } from "react-icons/io";
 import { IoIosStarOutline } from "react-icons/io";
 import { IoStarHalfSharp } from "react-icons/io5";
 import QuantityInput from '../../../shared/common/button';
-import { addToCart } from '../../../shared/componet/cart';
+import { useDispatch } from 'react-redux';
+import { addTocart } from '../../../redux/addTocart/cartSlice';
 
-export default function ProductItems({ cart, setCart }) {
+export default function ProductItems() {
     const { id } = useParams();
     const index = parseInt(id) - 1;
     const navigate = useNavigate();
@@ -20,19 +22,11 @@ export default function ProductItems({ cart, setCart }) {
         console.log('productId', id);
     }, [id]);
 
-    useEffect(() => {
-        localStorage.setItem('cartItems', JSON.stringify(cart));
-    }, [cart]);
+    const dispatch = useDispatch()
 
     const handleAddToCart = (product) => {
-        const item = {
-            id: productData[index].id,
-            name: productData[index].heading,
-            price: productData[index].price,
-            quantity: quantity
-        };
-        setCart(prevCart => [...prevCart, item]);
-        addToCart(item, cart, setCart);
+        dispatch(addTocart(product));
+        navigate('/cart');
     };
 
     return (
@@ -72,10 +66,10 @@ export default function ProductItems({ cart, setCart }) {
                         </div>
                         <div className="button_aligment">
                             <div className="product_addCart">
-                                <button onClick={handleAddToCart}>Add to cart</button>
+                                <button onClick={() => handleAddToCart(productData[index])}>Add to cart</button>
                             </div>
                             <div className="product_buyNow">
-                                <button onClick={() => navigate('/cart')}>Buy Now</button>
+                                <button>Buy Now</button>
                             </div>
                         </div>
                     </div>

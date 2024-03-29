@@ -36,7 +36,7 @@ export default [
     },
     {
         id: '5',
-        img: 'https://i.postimg.cc/Mf1B5mBx/ideapad-gaming.png',
+        img: 'https://i.postimg.cc/rRcy6Bsd/pexels-pixabay-4158-removebg-preview.png',
         heading: "HP Laptop 15s, 12th Gen Intel Core i3, 15.6-inch (39.6 cm), 8GB DDR4, 512GB SSD, Thin & Light, Dual Speakers (Win 11, MSO 2021, Silver, 1.69 kg), fq5007TU / FQ5327TU",
         price: "$500",
         del_price: "$800",
@@ -78,7 +78,7 @@ export default [
     },
     {
         id: '10',
-        img: 'https://i.postimg.cc/tnzfsf5V/bag.png',
+        img: 'https://i.postimg.cc/Yhn0k1hZ/Sophie-Hulme-stairs-2-removebg-preview.png',
         heading: "FUR JADEN Anti Theft Number Lock Backpack Bag with 15.6 Inch Laptop Compartment, USB Charging Port & Organizer Pocket for Men Women Boys Girls",
         price: "$960",
         del_price: "$1160",
@@ -87,7 +87,7 @@ export default [
     },
     {
         id: '11',
-        img: 'https://i.postimg.cc/tnzfsf5V/bag.png',
+        img: 'https://i.postimg.cc/hJ57BtRX/gammaxx.png',
         heading: "Lenovo (Renewed) Thinkcentre M700 Desktop Mini Pc (Intel Core I3 6Th Gen,8 Gb Ddr4 Ram,256 Gb Ssd,Wifi,Windows 11,Ms Office,Intel Hd Graphics,Usb,Dp)Black",
         price: "$160",
         del_price: "$200",
@@ -124,7 +124,7 @@ export default [
     },
     {
         id: '15',
-        img: 'https://i.postimg.cc/rRcy6Bsd/pexels-pixabay-4158-removebg-preview.png',
+        img: 'https://i.postimg.cc/Mf1B5mBx/ideapad-gaming.png',
         heading: "Chuwi HeroBook Pro 14.1'' Intel Celeron N4020 Laptop with 8GB RAM, 256GB SSD, Windows 11, 1TB Expand, FHD IPS, Ultra Slim, USB3.0, Mini-HDMI, Webcam",
         price: "$700",
         del_price: '$950',

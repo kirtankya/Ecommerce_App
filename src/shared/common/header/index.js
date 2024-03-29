@@ -8,7 +8,7 @@ import Search from '../../componet/search';
 import AddCart from '../../componet/addCart';
 import WishList from '../../componet/wishList';
 
-export default function Header() {
+export default function Header({products,setFilteredProducts}) {
     return (
         <div className='header_aligment'>
             <Navbar expand="lg" className="navbar">
@@ -26,7 +26,7 @@ export default function Header() {
                     </Navbar.Collapse>
                     <div style={{ display: 'flex', gap: '20px' }} className="aligment-flex">
                         <div className='search_Items'>
-                            <Search />
+                            <Search products={products} setFilteredProducts={setFilteredProducts} />
                         </div>
                         <div className="header_items">
                             <div className="wishList_Item">
