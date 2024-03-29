@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
-import './cart.scss';
-
-export const addToCart = (product, cart, setCart) => {
-    setCart(prevCart => [...prevCart, product]);
-};
-
-
-
+// Cart.js
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTocart, removeTocart } from '../../../redux/addTocart/cartSlice';
 
 export default function Cart() {
-    const [cart, setCart] = useState([]);
+    const cart = useSelector(state => state.cart.cartItems);
+    const dispatch = useDispatch();
+
+    const handleAddToCart = (product) => {
+        dispatch(addTocart(product));
+    };
+
+    const handleRemoveFromCart = (productId) => {
+        dispatch(removeTocart(productId)); // Pass only the ID
+    };
 
     return (
         <div className="cart_main">
-            <div className="container">
-                <div className='main_cart'>
-                    <h2>Cart</h2>
-                    <ul>
-                        {cart.map((item, index) => (
-                            item && (
-                                <li key={index}>
-                                    {item.name} - ${item.price} - Quantity: {item.quantity}
-                                </li>
-                            )
-                        ))}
-                    </ul>
-                </div>
+            <h2>Cart</h2>
+            <div className="cart_items">
+                {cart.map((item, index) => (
+                    <div key={index} className="cart_item">
+                        <img src={item.img} alt={item.name} />
+                        <div className="product_details">
+                            <p>{item.heading}</p>
+                            <span>{item.price}</span>
+                            <button onClick={() => handleAddToCart(item)}>Add to Cart</button>
+                            <button onClick={() => handleRemoveFromCart(item.id)}>Remove from Cart</button>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     );

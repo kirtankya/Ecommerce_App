@@ -1,10 +1,22 @@
 @import "../../../style/index.scss";
 
-.cart_main {
-  margin: 20px;
-  .main_cart{
-    h2{
-      @include font-25;
+.cart_items {
+  h2 {
+    @include font-25;
+  }
+  .cart_item {
+    img {
+      width: 200px;
+    }
+    p {
+      @include font-16;
+    }
+    span {
+      display: block;
+      @include font-16;
+    }
+    .add_To_icon {
+      font-size: 20px;
     }
   }
 }
