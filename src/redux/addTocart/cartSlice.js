@@ -23,7 +23,7 @@ const cartSlice = createSlice({
             state.cartTotalAmount += price;
         },
         removeTocart(state, action) {
-            const idToRemove = action.payload; // Assuming payload is the ID of the item
+            const idToRemove = action.payload;
             const itemToRemove = state.cartItems.find(item => item.id === idToRemove);
             if (itemToRemove) {
                 state.cartTotalQuantity -= itemToRemove.quantity;
