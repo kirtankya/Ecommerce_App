@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import DefaultLayout from "./defaultlayout";
 import Home from "../pages";
 import Login from "../pages/form/login";
@@ -6,11 +7,9 @@ import Signup from "../pages/form/signUp";
 import Contact from "../pages/contact";
 import About from "../pages/about";
 import ProductItems from "../pages/home/productItems";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Cart from "../shared/componet/cart";
 import { Provider } from "react-redux";
 import store from "../redux/store";
-
 
 function RouterComponent() {
     const [loginData, setLoginData] = useState(false);
@@ -20,7 +19,7 @@ function RouterComponent() {
         if (loggedIn === 'true') {
             setLoginData(true);
         }
-    }, [loginData]);
+    }, []);
 
     const handleLogin = () => {
         setLoginData(true);
@@ -34,11 +33,6 @@ function RouterComponent() {
         console.log("User logged out");
     };
 
-    console.log("loginData:", loginData);
-
-    const [cart, setCart] = useState([])
-
-
     return (
         <Provider store={store}>
             <Router>
@@ -46,19 +40,13 @@ function RouterComponent() {
                     <Route path="/" element={<DefaultLayout loginData={loginData} onLogout={handleLogout} />}>
                         <Route path="/signup" element={<Signup />} />
                         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-                        {loginData ? (
-                            <>
-                                <Route path="/home" element={<Home />} />
-                                <Route path="/products/:id" element={<ProductItems cart={cart} setCart={setCart} />} />
-                                <Route path="/contact" element={<Contact />} />
-                                <Route path="/about" element={<About />} />
-                                <Route path="/cart" element={<Cart cart={cart} />} />
-
-                            </>
-                        ) : (
-                            <Route path="*" element={<Navigate to="/login" />} />
-                        )}
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/products/:id" element={<ProductItems />} />
+                        <Route path="/contact" element={<Contact />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/cart" element={<Cart />} />
                     </Route>
+                    <Route path="*" element={loginData ? <Navigate to="/" /> : <Navigate to="/login" />} />
                 </Routes>
             </Router>
         </Provider>

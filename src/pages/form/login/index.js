@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './login.scss';
+import emailjs from '@emailjs/browser';
+
 import image from '../../../assets/images/Side Image.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
@@ -9,8 +11,11 @@ export default function Login() {
     email: '',
     password: ''
   });
-  const [data, setData] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('loginData') === 'true'); // Use the same key for consistency
+  const [data, setData] = useState({
+    email: '',
+    password: ''
+  });
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('loginData') === 'true');
 
   const handleChange = (ev) => {
     const { name, value } = ev.target;
@@ -41,14 +46,13 @@ export default function Login() {
       console.log("Navigating to home page...");
       navigate('/home');
     } else {
-      toast.error("Something went wrong!", {
+      toast.error("Invalid email or password!", {
         position: "top-right"
       });
     }
-  };
-
+  }
   const handleLogout = () => {
-    localStorage.removeItem('loginData'); // Remove 'loginData' key
+    localStorage.removeItem('loginData');
     setIsLoggedIn(false);
     toast.success("Logged out successfully!", {
       position: 'top-right'
@@ -67,8 +71,8 @@ export default function Login() {
             <h1>Log in to Exclusive</h1>
             <p>Enter your details below</p>
             <form onSubmit={handleSubmit}>
-              <input type="email" onChange={handleChange} placeholder='Enter Your Email' name="email" />
-              <input type="password" onChange={handleChange} placeholder='Enter Your Password' name="password" />
+              <input type="email" onChange={handleChange} placeholder='Enter Your Email' name="email" value={data.email} />
+              <input type="password" onChange={handleChange} placeholder='Enter Your Password' name="password" value={data.password} />
               <div className="aligment">
                 <div className="login_button">
                   <button type="submit">Login</button>
