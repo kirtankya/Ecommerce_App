@@ -1,0 +1,42 @@
+@import "../../../style/index.scss";
+
+.cart_items {
+  padding: 20px;
+  h2 {
+    @include font-25;
+    border-top: 1px solid #000;
+  }
+  .cart_item {
+    @include flex;
+    align-items: center;
+
+    @media (max-width:576px) {
+      flex-direction: column;
+    }
+    img {
+      width: 200px;
+    }
+    .product_details {
+      flex-direction: column;
+      p {
+        @include font-16;
+        max-width: 500px;
+      }
+      span {
+        display: block;
+        @include font-16;
+      }
+      button {
+        width: 50px;
+        height: 30px;
+        background-color: var(--theme-box-color);
+        color: var(--theme-button-white-color);
+        border: none;
+      }
+      select {
+        width: 50px;
+        height: 30px;
+      }
+    }
+  }
+}

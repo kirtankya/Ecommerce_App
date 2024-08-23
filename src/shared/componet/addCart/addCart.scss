@@ -1,0 +1,27 @@
+@import "../../../style/index.scss";
+.Addcart {
+  position: relative;
+  img {
+    width: 30px;
+    cursor: pointer;
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+  .addTocart {
+    width: 20px;
+    height: 20px;
+    background-color: var(--theme-box-color);
+    border-radius: 100%;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    p {
+      @include font-16;
+      font-weight: 600;
+      text-align: center;
+      color: var(--theme-font-color);
+    }
+  }
+}

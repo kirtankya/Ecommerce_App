@@ -1,0 +1,68 @@
+@import "../../../style/index.scss";
+
+.categories_main {
+  padding: 30px;
+
+  .categories_aligment {
+    @include flex;
+    gap: 6px;
+    align-items: center;
+
+    .categories_box {
+      width: 20px;
+      height: 40px;
+      border-radius: 3px;
+      background-color: var(--theme-box-color);
+    }
+
+    h2 {
+      @include font-18;
+      font-weight: 600;
+      color: var(--theme-font-color-red);
+    }
+  }
+
+  .categories_browse {
+    padding-top: 10px;
+
+    h2 {
+      @include font-45;
+      font-weight: 600;
+
+      @media (max-width: 992px) {
+        @include font-35;
+        font-weight: 600;
+      }
+    }
+  }
+  .categories_Items {
+    @include grid-6;
+    padding: 30px 0px;
+    @media (max-width: 992px) {
+      @include grid-3;
+    }
+    @media (max-width: 576px) {
+      @include grid-1;
+    }
+    .categories_Item {
+      padding: 20px;
+      transition: 0.5s ease-in-out all;
+      border: 1px solid var(--theme-header-background-color);
+      .categories_icons {
+        font-size: 30px;
+        text-align: center;
+      }
+      p {
+        @include font-18;
+        font-weight: 600;
+        text-align: center;
+      }
+      &:hover {
+        background-color: var(--theme-box-color);
+        color: var(--theme-font-color);
+        border-radius: 10px;
+        transition: 0.5s ease-in-out all;
+      }
+    }
+  }
+}

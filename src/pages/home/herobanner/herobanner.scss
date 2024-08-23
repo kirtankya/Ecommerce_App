@@ -1,0 +1,96 @@
+@import "../../../style/index.scss";
+
+.herobanner_background {
+  padding: 25px;
+  background-color: var(--theme-banner-background-color);
+  .herobanner_aligment {
+    @include flex;
+    justify-content: center;
+
+    @media (max-width: 576px) {
+      flex-wrap: wrap;
+    }
+    .herobanner {
+      @media (max-width: 576px) {
+        padding: 0px 20px;
+      }
+      .herobanner_main {
+        @include flex;
+        align-items: center;
+
+        @media (max-width: 992px) {
+          padding: 0px 20px;
+        }
+
+        .icons {
+          width: 100px;
+          height: 100px;
+          color: var(--theme-icon-color);
+
+          @media (max-width: 992px) {
+            width: 70px;
+            height: 70px;
+            color: var(--theme-icon-color);
+          }
+          @media (max-width: 576px) {
+            width: 70px;
+            height: 70px;
+            color: var(--theme-icon-color);
+          }
+        }
+
+        h3 {
+          @include font-25;
+          color: var(--theme-font-color);
+
+          @media (max-width: 992px) {
+            @include font-18;
+          }
+        }
+      }
+
+      .herobanner-text {
+        padding: 20px;
+        h2 {
+          padding-left: 10px;
+          max-width: 250px;
+          @include font-45;
+          color: var(--theme-font-color);
+
+          @media (max-width: 992px) {
+            @include font-35;
+            max-width: 400px;
+          }
+        }
+      }
+
+      .button {
+        padding: 10px 30px;
+        @include flex;
+        align-items: center;
+        gap: 6px;
+        p {
+          @include font-18;
+          text-decoration: underline;
+          cursor: pointer;
+          margin: 0;
+          color: var(--theme-font-color);
+        }
+        .arrow {
+          width: 30px;
+          height: 30px;
+          color: var(--theme-icon-color);
+        }
+      }
+    }
+    .herobanner_image {
+      width: 600px;
+      height: 300px;
+      background-image: url(../../../assets/images/iphone.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      object-fit: cover;
+    }
+  }
+}

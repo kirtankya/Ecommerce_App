@@ -1,0 +1,99 @@
+@import "../../../style/index.scss";
+
+.product_By_card {
+  padding: 20px;
+  .product_by_card {
+    @include grid-2;
+    gap: 10px;
+
+    @media (max-width: 576px) {
+      @include grid-1;
+    }
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 400px;
+    }
+  }
+  .product_card_details {
+    h2 {
+      max-width: 600px;
+      @include font-25;
+      font-weight: 600;
+
+      @media (max-width: 576px) {
+        @include font-16;
+      }
+    }
+    .product_ratingStar {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--theme-banner-background-color);
+      .star_icon {
+        color: var(--theme-star-icon-color);
+        font-size: 20px;
+      }
+    }
+    .product_button {
+      margin-top: 15px;
+      button {
+        display: block;
+        padding: 10px;
+        background-color: var(--theme-banner-background-color);
+        color: var(--theme-button-white-color);
+      }
+    }
+    .product_price {
+      @include flex;
+      margin: 10px 0px;
+      del {
+        @include font-25;
+        color: var(--theme-font-color-red);
+
+        @media (max-width: 576px) {
+          @include font-16;
+        }
+      }
+      span {
+        @include font-25;
+        display: block;
+        @media (max-width: 576px) {
+          @include font-16;
+        }
+      }
+    }
+    .product_text {
+      padding: 10px 0px;
+      border-top: 1px solid var(--theme-banner-background-color);
+    }
+  }
+  .product_cart_button {
+    display: flex;
+    justify-content: start;
+    // margin-top: 10px;
+  }
+  .button_aligment {
+    @include flex;
+    margin-top: 10px;
+    .product_addCart,
+    .product_buyNow {
+      button {
+        padding: 10px 30px;
+        border: none;
+        background-color: var(--theme-button-color);
+        color: var(--theme-font-color);
+        border-radius: 20px;
+        transition: 0.5s ease-in-out all;
+
+        @media (max-width: 576px) {
+          padding: 10px 20px;
+        }
+
+        &:hover {
+          background-color: var(--theme-banner-background-color);
+          color: var(--theme-font-color);
+          transition: 0.5s ease-in-out all;
+        }
+      }
+    }
+  }
+}

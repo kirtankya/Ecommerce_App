@@ -1,0 +1,101 @@
+@import "../../../style/index.scss";
+
+.banner_main {
+  padding: 30px 20px;
+  background-color: var(--theme-banner-background-color);
+  @include flex-between;
+  align-items: center;
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+  .banner_text {
+    padding: 20px;
+
+    @media (max-width: 400px) {
+      padding: 20px 10px;
+    }
+
+    p {
+      @include font-18;
+      color: var(--theme-font-color-pista);
+    }
+
+    h2 {
+      @include font-45;
+      color: var(--theme-font-color);
+      max-width: 350px;
+
+      @media (max-width: 992px) {
+        @include font-35;
+      }
+      @media (max-width: 400px) {
+        @include font-25;
+      }
+    }
+
+    .banner_timer {
+      margin-top: 20px;
+      @include grid-4;
+
+      @media (max-width: 576px) {
+        gap: 10px;
+      }
+      @media (max-width: 400px) {
+        @include grid-2;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .banner_day,
+      .banner_hours,
+      .banner_minute,
+      .banner_second {
+        width: 80px;
+        height: 80px;
+        background-color: var(--theme-button-white-color);
+        border-radius: 100%;
+
+        @media (max-width: 576px) {
+          width: 60px;
+          height: 60px;
+        }
+
+        h2 {
+          @include font-18;
+          padding-top: 10px;
+          text-align: center;
+          font-weight: 600;
+          color: var(--theme-button-black-color);
+
+          @media (max-width: 576px) {
+            @include font-16;
+            padding-top: 3px;
+          }
+        }
+        span {
+          display: block;
+          text-align: center;
+          @include font-16;
+          font-weight: 600;
+          color: var(--theme-button-black-color);
+
+          @media (max-width: 576px) {
+            @include font-14;
+            // padding-bottom: 10px;
+          }
+        }
+      }
+    }
+    .banner_button {
+      margin-top: 30px;
+      button {
+        background-color: var(--theme-font-color-pista);
+        color: var(--theme-font-color);
+        padding: 10px 30px;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+}

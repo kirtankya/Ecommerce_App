@@ -1,0 +1,17 @@
+.form {
+  margin: 50px 0px;
+  .form_main {
+    .form_field {
+      .form_input {
+        @media (max-width: 576px) {
+          margin-top: 20px;
+        }
+      }
+    }
+    .textarea {
+      &::placeholder {
+        padding-left: 20px;
+      }
+    }
+  }
+}

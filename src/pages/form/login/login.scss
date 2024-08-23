@@ -1,0 +1,146 @@
+@import "../../../style/index.scss";
+
+.signup_form {
+  padding: 20px;
+
+  .form_aligment1 {
+    @include grid-2;
+    gap: 50px;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      @include grid-1;
+    }
+
+    @media (max-width: 576px) {
+      @include grid-1;
+    }
+
+    .form_image {
+      img {
+        padding: 20px 0px;
+        min-width: 100%;
+
+        @media (max-width: 768px) {
+          min-width: 100%;
+        }
+
+        @media (min-width: 576px) {
+          max-width: 400px;
+        }
+
+        @media (max-width: 576px) {
+          display: none;
+        }
+      }
+    }
+
+    .signup_form_main {
+      h1 {
+        @include font-35;
+        @media (max-width: 400px) {
+          @include font-25;
+        }
+      }
+
+      p {
+        padding-top: 10px;
+        @include font-18;
+      }
+
+      form {
+        margin-top: 20px;
+
+        input {
+          width: 400px;
+          height: 40px;
+          border: none;
+          border-bottom: 1px solid var(--theme-border-color);
+          margin: 10px 0px;
+          outline: none;
+
+          @media (max-width: 992px) {
+            width: 100%;
+          }
+
+          @media (max-width: 576px) {
+            width: 100%;
+          }
+          @media (max-width: 400px) {
+            width: 100%;
+          }
+        }
+
+        span {
+          color: red;
+          font-size: 14px;
+        }
+
+        .aligment {
+          @include flex;
+          gap: 60px;
+          align-items: center;
+
+          // @media (max-width: 992px) {
+          //   gap: 30px;
+          // }
+
+          .login_button {
+            button {
+              width: 150px;
+              height: 40px;
+              background-color: var(--theme-button-color);
+              color: var(--theme-font-color);
+              border: none;
+              border-radius: 4px;
+              margin-top: 20px;
+
+              @media (max-width: 992px) {
+                width: 100px;
+              }
+            }
+          }
+
+          .forget_password {
+            margin-top: 20px;
+
+            a {
+              @include font-16;
+              color: var(--theme-font-color-red);
+
+              @media (max-width: 992px) {
+                @include font-14;
+              }
+
+              @media (max-width: 576px) {
+                @include font-14;
+              }
+            }
+          }
+        }
+        .login_button {
+          @media (max-width: 576px) {
+            width: 100px;
+          }
+        }
+      }
+
+      span {
+        display: block;
+        font-size: 18px;
+        padding: 10px 50px;
+        color: var(--theme-button-black-color);
+
+        @media (max-width: 992px) {
+          padding: 10px 20px;
+          @include font-16;
+        }
+
+        .login {
+          color: var(--theme-button-black-color);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

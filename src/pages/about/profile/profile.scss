@@ -1,0 +1,62 @@
+@import "../../../style/index.scss";
+
+.profile_main {
+  padding: 30px;
+  .profile_aligment {
+    min-width: 100%;
+    overflow-x: auto;
+    @include grid-3;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .main_profile {
+      .profile {
+        // height: 391px;
+        background-color: var(--theme-searchbar-bg-color);
+        img {
+          padding: 0px 20%;
+          height: 391px;
+
+          @media (max-width: 992px) {
+            padding: 0px;
+          }
+        }
+        @media (max-width: 576px) {
+          min-width: 600px;
+        }
+      }
+      .profile_text {
+        padding: 10px;
+        h1 {
+          @include font-35;
+          font-weight: 600;
+
+          @media (max-width: 576px) {
+            @include font-25;
+            font-weight: 600;
+          }
+        }
+        p {
+          @include font-18;
+
+          @media (max-width: 576px) {
+            @include font-16;
+          }
+        }
+        .icon_profile {
+          @include flex;
+          padding-top: 10px;
+          font-size: 30px;
+          cursor: pointer;
+
+          @media (max-width: 576px) {
+            font-size: 25px;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}

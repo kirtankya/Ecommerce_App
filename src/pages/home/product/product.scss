@@ -1,0 +1,65 @@
+@import "../../../style/index.scss";
+
+.product_main {
+  padding: 20px;
+
+  .product_day {
+    @include flex;
+    gap: 6px;
+    align-items: center;
+
+    .product_box {
+      width: 20px;
+      height: 40px;
+      border-radius: 3px;
+      background-color: var(--theme-box-color);
+    }
+
+    h2 {
+      @include font-18;
+      font-weight: 600;
+      color: var(--theme-font-color-red);
+    }
+  }
+
+  .product_sales {
+    @include flex-between;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 0px;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product_text {
+      h1 {
+        @include font-35;
+        font-weight: 500;
+        @media (max-width: 576px) {
+          @include font-25;
+        }
+      }
+    }
+
+    .product_sales_timer {
+      @include flex;
+      .product_sales_day
+        .product_sales_hours
+        .product_sales_minutes
+        .product_sales_seconds {
+        span {
+          display: block;
+          @include font-16;
+          font-weight: 500;
+        }
+
+        h2 {
+          @include font-35;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
